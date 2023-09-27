@@ -1,0 +1,9 @@
+{
+  "blogs": [
+    { "id": 1, "title": "Angular", "description": "Angular is an open source framework Hahah" },
+    { "id": 2, "title": "Vue", "description": "Vue is a progressive framework" },
+    { "id": 3, "title": "React", "description": "React is an open source framework" },
+    { "id": 4, "title": "JavaScript", "description": "JavaScript is the father of web development" }
+
+  ]
+}
