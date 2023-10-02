@@ -6,7 +6,8 @@ import { BlogComponent } from './components/blog/blog.component';
 const routes: Routes = [
   {path:'', redirectTo:'counter', pathMatch:'full'},
   {path:'counter', component:CounterComponent},
-  {path:'blog', component:BlogComponent}
+  {path:'blog', component:BlogComponent},
+  {path:'blog/edit/:id', component:BlogComponent}
 
 ];
 

@@ -1,7 +1,5 @@
-import { blogReducer } from "../blog/blog.reducer";
-import { counterReducer } from "../counter.reducer";
+import { AppStateModal } from "./app.modal";
 
-export const appState = {
-    counterState:counterReducer,
-    blogState:blogReducer
+export const appState:AppStateModal = {
+    isLoaded:false
 }

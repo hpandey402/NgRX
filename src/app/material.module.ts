@@ -8,8 +8,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
     exports: [
@@ -21,7 +22,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         MatIconModule,
         MatDialogModule,
         MatMenuModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatSnackBarModule,
+        MatProgressSpinnerModule,
+        MatPaginatorModule
     ]
 })
 

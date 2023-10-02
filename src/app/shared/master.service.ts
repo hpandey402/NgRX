@@ -11,6 +11,18 @@ export class MasterService {
   constructor(private http:HttpClient) { }
 
   getAllBlogs(){
-    return this.http.get<BlogModel[]>('http://localhost:3000/blogs');
+    let url = 'http://localhost:3000/blogs';
+    return this.http.get<BlogModel[]>(url);
+  }
+  createBlog(blogInput: BlogModel){
+    return this.http.post<BlogModel>('http://localhost:3000/blogs', blogInput);
+  }
+
+  updateBlog(blogInput: BlogModel){
+    return this.http.put<BlogModel>('http://localhost:3000/blogs/'+blogInput.id, blogInput);
+  }
+
+  deleteBlog(id:number){
+    return this.http.delete<BlogModel>('http://localhost:3000/blogs/'+id);
   }
 }

@@ -4,6 +4,7 @@ export interface BlogModel {
     description:string
 }
 
-export interface BlogList {
-    blogList:BlogModel[]
+export interface BlogState {
+    blogList:BlogModel[],
+    errorMessage:string
 }

@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { addBlog, updateBlog } from 'src/app/shared/store/blog/blog.actions';
 import { BlogModel } from 'src/app/shared/store/blog/blog.model';
 import { getBlogById } from 'src/app/shared/store/blog/blog.selector';
+import { loadSpinner } from 'src/app/shared/store/global/app.actions';
 import { AppStateModal } from 'src/app/shared/store/global/app.modal';
 
 @Component({
@@ -49,12 +50,16 @@ export class AddblogComponent implements OnInit {
         title:this.blogForm.value.title as string,
         description: this.blogForm.value.description as string
       }
-      if(this.data.isEdit){
-        blog.id = this.blogForm.value.id as number;
-        this.store.dispatch(updateBlog({blogData:blog}));
-      }else{
-        this.store.dispatch(addBlog({blogData:blog}));
-      }
+      this.store.dispatch(loadSpinner({isLoaded:true}))
+      setTimeout(()=>{
+        if(this.data.isEdit){
+          blog.id = this.blogForm.value.id as number;
+          this.store.dispatch(updateBlog({blogData:blog}));
+        }else{
+          this.store.dispatch(addBlog({blogData:blog}));
+        }
+
+      }, 2000)
       this.closePopup()
     }
   }
